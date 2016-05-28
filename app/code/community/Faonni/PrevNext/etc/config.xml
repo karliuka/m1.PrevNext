@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_PrevNext
+ * @copyright   Copyright (c) 2016 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Faonni_PrevNext>
+            <version>1.2.0</version>
+        </Faonni_PrevNext>
+    </modules>
+    <global>
+        <blocks>
+            <faonni_prevnext>
+                <class>Faonni_PrevNext_Block</class>
+            </faonni_prevnext>
+        </blocks>
+        <helpers>
+            <faonni_prevnext>
+                <class>Faonni_PrevNext_Helper</class>
+            </faonni_prevnext>
+        </helpers>		
+        <models>
+            <faonni_prevnext>
+                <class>Faonni_PrevNext_Model</class>
+            </faonni_prevnext>
+        </models>
+		<cache>
+			<types>
+				<faonni_prevnext translate="label,description" module="faonni_prevnext">
+					<label>Products Position</label>
+					<description>Prev Next Products Position Collection.</description>
+					<tags>PREV_NEXT_COLLECTION</tags>
+				</faonni_prevnext>
+			</types>
+		</cache>		
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <faonni_prevnext>
+                    <file>faonni/prevnext.xml</file>
+                </faonni_prevnext>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Faonni_PrevNext>
+                    <files>
+                        <default>Faonni_PrevNext.csv</default>
+                    </files>
+                </Faonni_PrevNext>
+            </modules>
+        </translate>
+		<events>
+            <catalog_block_product_list_collection>
+                <observers>
+                    <faonni_prevnext>
+                        <class>faonni_prevnext/observer</class>
+                        <method>init</method>
+                    </faonni_prevnext>
+                </observers>                
+            </catalog_block_product_list_collection>			
+            <catalog_controller_product_view>
+                <observers>
+                    <faonni_prevnext>
+                        <class>faonni_prevnext/observer</class>
+                        <method>setCacheId</method>
+                    </faonni_prevnext>
+                </observers>                
+            </catalog_controller_product_view>			
+        </events>      		
+    </frontend>	
+</config>

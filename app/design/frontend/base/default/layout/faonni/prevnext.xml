@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_PrevNext
+ * @copyright   Copyright (c) 2016 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+	<!--
+	Catalog product view layout
+	-->
+    <catalog_product_view>
+        <reference name="head">
+			<action method="addItem"><type>skin_css</type><name>css/prevnext.css</name></action>
+        </reference>	
+		<reference name="content">
+			<block type="faonni_prevnext/navigation" name="product.navigation" before="-" template="faonni/prevnext/navigation.phtml" />
+		</reference>		
+    </catalog_product_view>
+	<!--
+	End updates
+	-->	
+</layout>

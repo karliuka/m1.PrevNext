@@ -1,0 +1,25 @@
+.product-prevnext-box {
+	text-align: right;
+}
+.prev-button,
+.next-button {
+	display: inline-block;
+	width: 42px;
+    height: 17px;
+	margin: 0 0 5px 0;
+	opacity: 1;
+}
+.next-button {
+	background:transparent url(../images/prevnext/next.gif) 0 0 no-repeat;
+}
+.prev-button {
+	background:transparent url(../images/prevnext/prev.gif) 0 0 no-repeat;
+}
+a.prev-button:hover,
+a.next-button:hover{
+	opacity: 0.70;
+}
+span.prev-button,
+span.next-button{
+	opacity: 0.50;
+}
